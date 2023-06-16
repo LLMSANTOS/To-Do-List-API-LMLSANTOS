@@ -10,3 +10,131 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: black;
+}
+.container {
+    background-color: rgb(245, 232, 232);
+    width: 500px;
+    margin-top: 100px;
+    height: 60vh;
+}
+.notepad {
+    background-color: white;
+    width:400px;
+    margin-left: 30px;
+    box-shadow: 0px 1px 5px;
+    border-radius: 2px;
+    z-index: 2;
+    transform: translateY(0);
+    position: relative;
+}
+.sheet1 {
+    position: absolute;
+    width: 390px;
+    height: 20px;
+    background-color: white;
+    box-shadow: 0 1px 2px; 
+    border-radius: 2px;
+    transform: translateY(-16px); 
+    margin-left: 35px;
+    z-index: 1;
+}
+.sheet2 {
+    position: absolute;
+    width: 380px;
+    height: 20px;
+    background-color: white;
+    box-shadow: 0 1px 2px; 
+    border-radius: 2px;
+    transform: translateY(-11px); 
+    margin-left: 40px;
+}
+
+.inputArea {
+    display: flex;
+    align-items: center;
+}
+.inputArea input {
+    margin-right:130px;
+}
+.inputArea input[type="text"]{
+    border: none;
+    margin-left: 5px;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: lighter;
+    color:rgb(238, 216, 237)
+}
+
+ul {
+    list-style-type: none;
+    margin-left:5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding:0;  
+}
+
+.listItems {
+    font-weight: lighter;  
+    color:rgb(70, 62, 62);
+    letter-spacing: 1.5px;
+}  
+li {
+    border-top: 1px solid rgb(212, 204, 204);
+}
+
+.bottom {
+    font-size: 0.7rem;
+    height:30px;
+    color: rgb(194, 182, 182);
+    opacity: 50;
+    padding-left: 5px;
+    text-align: left;
+    border-top: 1px solid rgb(226, 214, 214);
+    display: flex;
+    align-items: center;
+}
+
+    .listItems li .fa-times {
+    display: none;
+  }
+  
+  .listItems li:hover .fa-times {
+    display: inline;
+    color: rgb(124, 36, 36);
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+  .listItemContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .todoItem {
+    margin-right: 10px;
+    margin-left: 50px;
+  }
+
+  .inputArea, input{
+    margin-left: 50px;
+  }
+
+  .user {
+  
+    margin-bottom: 20px;
+    margin-right: 40px;
+    font-size: 1.0em;
+  }
