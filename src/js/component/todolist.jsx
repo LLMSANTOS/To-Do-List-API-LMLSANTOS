@@ -11,7 +11,7 @@ const TodoList = ()=> {
     },[])
 
     // function to add a username
-    const createUsername = () => {
+    const createUsername = () => {    
         if(username!==""){
            
             fetch ("https://assets.breatheco.de/apis/fake/todos/user/" + username, {
@@ -22,6 +22,7 @@ const TodoList = ()=> {
             .then((response) => response.json())
             .then(responseAsJson => {
                 console.log(responseAsJson);
+                alert(`The user: ${username} was successfuly created!`);
                 getTodos();
             }).catch((error)=> {
                 console.log(error);
@@ -30,6 +31,24 @@ const TodoList = ()=> {
         else {
             alert("Please insert a username!");
         }
+    }
+
+    // function to delete a username
+    const deleteUsername = () => {
+        fetch ("https://assets.breatheco.de/apis/fake/todos/user/" + username, {
+            method: 'DELETE',
+            headers: {'Content-type':'application/json'},
+        })
+        .then((response) => response.json())
+        .then(responseAsJson => {
+            console.log(responseAsJson);
+            alert (`The user: ${username} is going to be deleted!`)
+            setUsername("");
+            setTodoList([]);    
+        })
+        .catch((error)=> {
+            console.log(error);
+        });
     }
 
     // function to acquire todos
@@ -99,7 +118,6 @@ const TodoList = ()=> {
         }).catch((error)=> {
             console.log(error);
         });
-
     }
      
     return (
@@ -118,7 +136,8 @@ const TodoList = ()=> {
                         }
                     }}
                     placeholder="Insert your name..."
-                />	
+                />
+                {username && (<button className="text-white bg-danger border-1 border-danger rounded-2" onClick={deleteUsername}>Delete Username</button>)}	
             </div>
             
             <div className="notepad">				
